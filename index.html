@@ -1,72 +1,138 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog</title>
-<link rel="stylesheet" href="style.css">
-<style>
-    
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Blog Tech</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #08ec00;
+            color: #FFFFFF;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+        main {
+            background-color: #FFFFFF;
+            color: #00f999;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        article {
+            display: flex;
+            flex-direction: column; 
+            gap: 15px;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .meu-post-destaque {
+            border: 2px solid #0bfa9e; 
+            border-radius: 8px;        
+            padding: 16px;             
+            width: auto;               
+        }
+        .artigo-autor {
+            font-weight: bold;
+        }
+        .botao-coracao {
+            background: none;
+            border: 1px solid #0b78ed;
+            padding: 8px 12px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 4px;
+            width: fit-content;
+            transition: background 0.2s;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+        .botao-coracao:hover {
+            background-color: #f4f4f4;
+        }
+        .botao-coracao span {
+            margin-left: 6px;
+            font-size: 16px;
+            color: #0288f6;
+        }
+        img {
+            max-width: 50%;
+            height: auto;
+            display: block;
+        }
+    </style>
 </head>
 <body>
+
     <header>
-<h1>Meu blog tech</h1>
-<p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
-</header>
-<main> <img src="imagem.avif" alt="imagem escolhida ">
-    </div>
-<h2>Meu primeiro post</h2>
-<p>Por: Thiago Adriano Hneda</p>
-<p>Boas-vindas a meu novo blog! Aqui eu vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+        <h1>Meu blog tech</h1>
+        <p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
+    </header>
 
-<button>💀<span></span></button>
-<button>😃<span></span></button>
-</div>
+    <main>
+        <!-- PRIMEIRO POST -->
+        <article>
+            <!-- Imagem posicionada apenas no topo do post -->
+            <img src="imagem.avif"
+                 alt="Logotipo conceitual de tecnologia e educacao.">
 
-<article>
+            <div class="meu-post-destaque">
+                <h2>Meu primeiro post</h2>
+                <p class="artigo-autor">Por: Thiago Hneda</p>
+                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+                <button class="botao-coracao">❤️‍🔥<span>0</span></button>
+                <button class="botao-coracao">👍<span>0</span></button>
+            </div>
+        </article>
 
-<article>
-    div>
-<h2>Meu segundo post</h2>
+        <!-- SEGUNDO POST -->
+        <article>
+            <!-- Imagem posicionada apenas no topo do post -->
+            <img src="imagem1.jpg"
+            <img src="imagem1.jpg"
+                 alt="Logotipo conceitual de tecnologia e educacao: um livro aberto de onde emerge um cérebro digital brilhante, cercado por ícones de Wi‑Fi, circuitos e lâmpada de ideia. Cores em tons de azul e branco.">
 
-<p class="artigo-autor">
-Por: Thiago Adriano Hneda
-</p>
+            <div class="meu-post-destaque">
+                <h2>Meu segundo post</h2>
+                <p class="artigo-autor">Por: Thiago Hneda</p>
+                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+                <button class="botao-coracao">❤️‍🔥<span>0</span></button>
+                <button class="botao-coracao">👍<span>0</span></button>
+            </div>
+        </article>
+    <script>
+        const botoes = document.querySelectorAll("button");
 
-<p>
-Neste post vou compartilhar mais conteúdos sobre HTML, CSS
-e JavaScript para quem está começando na programação.
-</p>
+        botoes.forEach(function (botao) {
+            let curtiu = false;
 
-<button>😁 <span>0</span></button>
-<button>😃<span>0</span></button>
-</div>
-</article>
+            botao.addEventListener("click", botaoClicado);
 
-</main>
+            function botaoClicado() {
+                console.log("fui clicado");
+                let texto = botao.querySelector("span");
 
-<script>
-const botoes = document.querySelectorAll("button");
+                if (curtiu === false) {
+                    texto.textContent++;
+                    curtiu = true;
+                } else {
+                    texto.textContent--;
+                    curtiu = false;
+                }
+            }
+        });
+    </script>
 
-botoes.forEach(function (botao) {
-let curtiu = false;
-
-botao.addEventListener("click", botaoClicado);
-
-function botaoClicado() {
-let texto = botao.querySelector("span");
-
-if (curtiu === false) {
-texto.textContent++;
-curtiu = true;
-} else {
-texto.textContent--;
-curtiu = false;
-}
-}
-});
-</script>
 </body>
 </html>
