@@ -1,19 +1,15 @@
 const botoes = document.querySelectorAll("button");
 
-botoes.forEach(function (botao) {
-    let curtiu = false;
+botoes.forEach(botao => {
+    botao.addEventListener("click", () => {
 
-    botao.addEventListener("click", botaoClicado);
+        const contador = botao.querySelector("span");
 
-    function botaoClicado() {
-        let texto = botao.querySelector("span");
-
-        if (curtiu === false) {
-            texto.textContent++;
-            curtiu = true;
+        if (contador.textContent == "0") {
+            contador.textContent = "1";
         } else {
-            texto.textContent--;
-            curtiu = false;
+            contador.textContent = "0";
         }
-    }
+
+    });
 });
