@@ -1,27 +1,22 @@
  const botoes = document.querySelectorAll("button");
 
-botoes.forEach(function (botao) {
-    // Ignora o botão do tema
-    if (botao.classList.contains("btn-tema-escuro")) {
-        return;
-    }
+        botoes.forEach(function (botao) {
+            let curtiu = false;
 
-    let curtiu = false;
+            botao.addEventListener("click", botaoClicado);
 
-    botao.addEventListener("click", botaoClicado);
+            function botaoClicado() {
+                let texto = botao.querySelector("span");
 
-    function botaoClicado() {
-        let texto = botao.querySelector("span");
-
-        if (curtiu === false) {
-            texto.textContent++;
-            curtiu = true;
-        } else {
-            texto.textContent--;
-            curtiu = false;
-        }
-    }
-});
+                if (curtiu === false) {
+                    texto.textContent++;
+                    curtiu = true;
+                } else {
+                    texto.textContent--;
+                    curtiu = false;
+                }
+            }
+        });
 
 const btnTemaEscuro =document.querySelector(".btn-tema-escuro");
 
