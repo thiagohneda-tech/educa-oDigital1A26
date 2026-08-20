@@ -1,50 +1,29 @@
-document.addEventListener("DOMContentLoaded", function () {
+ const botoes = document.querySelectorAll("button");
 
-    // ==============================
-    // BOTÕES DE CURTIDA ❤️ 👍
-    // ==============================
-
-    const botoes = document.querySelectorAll("article button");
-
-    botoes.forEach(function (botao) {
-
-        let curtiu = false;
-
-        botao.addEventListener("click", function () {
-
-            const contador = botao.querySelector("span");
-
-            if (contador) {
-
-                if (curtiu === false) {
-                    contador.textContent = Number(contador.textContent) + 1;
-                    curtiu = true;
-                } else {
-                    contador.textContent = Number(contador.textContent) - 1;
-                    curtiu = false;
-                }
-
-            }
-
-        });
-
-    });
-
-
-    // ==============================
-    // BOTÃO DO TEMA 🌓
-    // ==============================
-
-    const botaoTema = document.querySelector(".btn-tema-escuro");
-
-    if (botaoTema) {
-
-        botaoTema.addEventListener("click", function () {
-
-            document.body.classList.toggle("tema-escuro");
-
-        });
-
+botoes.forEach(function (botao) {
+  let curtiu = false;
+  botao.addEventListener("click", botaoClicado);
+  function botaoClicado() {
+    let texto = botao.querySelector("span");
+    if (curtiu === false) {
+      texto.textContent++;
+      curtiu = true;
+    } else {
+      texto.textContent--;
+      curtiu = false;
     }
-
+  }
 });
+
+const btnTemaEscuro = document.querySelector(".btn-tema-escuro");
+
+btnTemaEscuro.addEventListener("click", mudaTema);
+
+function mudaTema() {
+  const corpoPagina = document.body;
+  if (corpoPagina.classList.contains("tema-escuro")) {
+    corpoPagina.classList.remove("tema-escuro");
+  } else {
+    corpoPagina.classList.add("tema-escuro");
+  }
+}
