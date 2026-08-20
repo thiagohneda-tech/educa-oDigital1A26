@@ -76,10 +76,10 @@ body {
 
 header {
     background: linear-gradient(135deg, #d62de6, #72d8cf);
-    color: white;
+    color: rgb(78, 209, 3);
     text-align: center;
     padding: 35px 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,.2);
+    box-shadow: 0 5px 15px rgba(116, 98, 98, 0.2);
 }
 
 header h1 {
