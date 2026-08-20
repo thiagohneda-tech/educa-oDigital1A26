@@ -1,30 +1,54 @@
-alert("JavaScript funcionando!");
+document.addEventListener("DOMContentLoaded", function () {
 
-const botoesCurtida = document.querySelectorAll(".btn-curtir");
+    // =========================
+    // BOTÕES DE CURTIDA
+    // =========================
 
-botoesCurtida.forEach(function (botao) {
+    const botoesCurtida = document.querySelectorAll("article button");
 
-    let curtiu = false;
+    botoesCurtida.forEach(function (botao) {
 
-    botao.addEventListener("click", function () {
+        let curtiu = false;
 
-        const texto = botao.querySelector("span");
+        botao.addEventListener("click", function () {
 
-        if (curtiu === false) {
-            texto.textContent++;
-            curtiu = true;
-        } else {
-            texto.textContent--;
-            curtiu = false;
-        }
+            const texto = botao.querySelector("span");
+
+            if (!texto) {
+                return;
+            }
+
+            if (curtiu === false) {
+
+                texto.textContent = Number(texto.textContent) + 1;
+                curtiu = true;
+
+            } else {
+
+                texto.textContent = Number(texto.textContent) - 1;
+                curtiu = false;
+
+            }
+
+        });
 
     });
 
-})
-const btnTemaEscuro = document.querySelector(".btn-tema-escuro");
 
-btnTemaEscuro.addEventListener("click", function () {
+    // =========================
+    // BOTÃO DO TEMA ESCURO
+    // =========================
 
-    document.body.classList.toggle("tema-escuro");
+    const btnTemaEscuro = document.querySelector(".btn-tema-escuro");
+
+    if (btnTemaEscuro) {
+
+        btnTemaEscuro.addEventListener("click", function () {
+
+            document.body.classList.toggle("tema-escuro");
+
+        });
+
+    }
 
 });
