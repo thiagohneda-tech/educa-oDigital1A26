@@ -49,7 +49,7 @@ body {
 }
 
 .tema-escuro header p {
-    color: #dbeafe;
+    color: #3e035aef;
 }
 
 .tema-escuro h2 {
@@ -67,7 +67,7 @@ body {
 
 .tema-escuro .btn-tema-escuro {
     background: var(--cor-secundaria);
-    color: #0b1120;
+    color: #17223b;
 }
 
 /* =======================
@@ -76,10 +76,10 @@ body {
 
 header {
     background: linear-gradient(135deg, #d62de6, #72d8cf);
-    color: rgb(78, 209, 3);
+    color: rgb(122, 255, 233);
     text-align: center;
     padding: 35px 20px;
-    box-shadow: 0 5px 15px rgba(116, 98, 98, 0.2);
+    box-shadow: 0 5px 15px rgba(93, 14, 117, 0.993);
 }
 
 header h1 {
@@ -178,7 +178,7 @@ button {
 button:hover {
     transform: scale(1.08);
     background: var(--cor-secundaria);
-    color: white;
+    color: rgb(255, 208, 208);
 }
 
 /* =======================
