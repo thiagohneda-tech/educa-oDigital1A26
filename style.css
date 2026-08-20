@@ -172,7 +172,7 @@ button {
     padding: 10px 18px;
     margin: 10px 6px 0;
     font-size: 1rem;
-    box-shadow: 0 3px 10px rgba(0,0,0,.15);
+    box-shadow: 0 3px 10px rgb(15, 226, 233);
 }
 
 button:hover {
@@ -194,8 +194,8 @@ button:hover {
     border-radius: 50%;
     font-size: 30px;
     background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
-    color: white;
-    box-shadow: 0 8px 20px rgba(0,0,0,.35);
+    color: rgb(82, 38, 83);
+    box-shadow: 0 8px 20px rgba(48, 11, 49, 0.925);
 }
 
 .btn-tema-escuro:hover {
