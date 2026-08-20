@@ -1,3 +1,5 @@
+alert("JavaScript funcionando!");
+
 const botoesCurtida = document.querySelectorAll(".btn-curtir");
 
 botoesCurtida.forEach(function (botao) {
@@ -18,11 +20,7 @@ botoesCurtida.forEach(function (botao) {
 
     });
 
-});
-
-
-// BOTÃO DO TEMA ESCURO
-
+})
 const btnTemaEscuro = document.querySelector(".btn-tema-escuro");
 
 btnTemaEscuro.addEventListener("click", function () {
