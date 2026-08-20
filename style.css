@@ -1,137 +1,152 @@
 :root {
-    --cor-primaria: #2563eb;
-    --cor-secundaria: #60a5fa;
-    --cor-fundo: #f4f8ff;
-    --cor-texto: #1e293b;
-    --cor-contraste: #ffffff;
-    --cor-botao: #e2e8f0;
+    --cor-primaria: #183C63;
+    --cor-secundaria: #3782d2;
+    --cor-fundo: #09e477;
+    --cor-texto: #151428;
+    --cor-contraste: #f3eef7;
+    --cor-botao: #f9f9f9;
+    --cor-borda: #183C63;
 
-    --fonte-texto: 'Segoe UI', sans-serif;
-}
-
-.tema-escuro {
-    --cor-primaria: #60a5fa;
-    --cor-secundaria: #93c5fd;
-    --cor-fundo: #0f172a;
-    --cor-texto: #f8fafc;
-    --cor-contraste: #1e293b;
-    --cor-botao: #334155;
+    --fonte-texto: "Segoe UI", sans-serif;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    transition: .3s;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Modo escuro */
+.tema-escuro {
+    --cor-primaria: #0f2742;
+    --cor-secundaria: #7bb8ff;
+    --cor-fundo: #151428;
+    --cor-texto: #ffffff;
+    --cor-contraste: #f3eef7;
+    --cor-botao: #2b2b3d;
+    --cor-borda: #7bb8ff;
 }
 
 body {
+    max-width: 100vw;
+    margin: 0;
     font-family: var(--fonte-texto);
-    background: var(--cor-fundo);
+    background-color: var(--cor-fundo);
     color: var(--cor-texto);
 }
 
 header {
-    background: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));
-    color: white;
+    background-color: var(--cor-primaria);
+    color: var(--cor-contraste);
     text-align: center;
-    padding: 20px;
-}
-
-header h1 {
-    font-size: 2rem;
-    margin-bottom: 5px;
-}
-
-main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 18px;
-    padding: 20px;
-}
-
-article {
-    width: 300px;
-    background: var(--cor-contraste);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 6px 18px rgba(0,0,0,.12);
-    display: flex;
-    flex-direction: column;
-}
-
-article:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(37,99,235,.2);
-}
-
-article img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-}
-
-article div {
-    padding: 15px;
-}
-
-h2 {
-    color: var(--cor-primaria);
-    font-size: 1.15rem;
-    margin-bottom: 10px;
+    margin: 0 auto;
+    padding: 16px;
 }
 
 .artigo-autor {
-    color: var(--cor-secundaria);
     font-weight: bold;
-    margin-bottom: 10px;
 }
 
-.artigo-fonte {
-    margin-top: 12px;
-    font-size: .8rem;
-    color: gray;
-}
-
-article p {
-    font-size: .95rem;
-    line-height: 1.5;
-}
-
-button {
-    margin-top: 12px;
-    margin-right: 8px;
-    border: none;
-    background: var(--cor-botao);
+main {
+    background-color: var(--cor-fundo);
     color: var(--cor-texto);
-    padding: 8px 14px;
-    border-radius: 8px;
+    margin: 0 auto;
+    padding: 16px;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    
+    margin: 16px;
+    gap: 16px;
+    padding: 16px;
+    flex: 1 1 25%;
+
+    background-color: var(--cor-contraste);
+    color: var(--cor-texto);
+}
+
+main img {
+    height: 80px;
+    display: block;
+}
+
+h2,
+p,
+button {
+    margin-bottom: 12px;
+}
+
+/* Links */
+.artigo-fonte a {
+    color: var(--cor-primaria);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.artigo-fonte a:hover {
+    text-decoration: underline;
+}
+
+/* Botões */
+button {
+    background-color: var(--cor-botao);
+    border: 1px solid var(--cor-borda);
+    padding: 8px 12px;
     cursor: pointer;
+    border-radius: 6px;
 }
 
 button:hover {
-    background: var(--cor-primaria);
-    color: white;
+    opacity: 0.9;
 }
 
-.btn-tema-escuro {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    font-size: 24px;
-    background: var(--cor-primaria);
-    color: white;
-    box-shadow: 0 5px 15px rgba(0,0,0,.3);
+/* Ajustes do modo escuro */
+.tema-escuro a {
+    color: var(--cor-secundaria);
+}
+
+.tema-escuro p {
+    color: var(--cor-texto);
+}
+
+.tema-escuro header p {
+    color: var(--cor-contraste);
 }
 
 .tema-escuro article {
-    background: #1e293b;
+    background-color: #1f1f33;
 }
+.btn-tema-escuro {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
 
-.tema-escuro .artigo-fonte {
-    color: #cbd5e1;
+    font-size: 32px;
+    padding: 12px;
+
+    background-color: var(--cor-primaria);
+    color: white;
+
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tema-escuro .btn-tema-escuro {
+    background-color: var(--cor-secundaria);
 }
