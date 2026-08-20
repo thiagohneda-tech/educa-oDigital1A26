@@ -31,13 +31,13 @@ body {
 
 .tema-escuro {
     --cor-primaria: #55b3ff;
-    --cor-secundaria: #9dd7ff;
+    --cor-secundaria: #60a5d3;
     --cor-fundo: #0b1120;
-    --cor-texto: #f8fafc;
+    --cor-texto: #539ae0;
     --cor-contraste: #16213a;
     --cor-botao: #16213a;
     --cor-borda: #24435d;
-    --cor-sombra: rgba(0, 0, 0, .45);
+    --cor-sombra: rgba(12, 63, 7, 0.918);
 }
 
 .tema-escuro article {
